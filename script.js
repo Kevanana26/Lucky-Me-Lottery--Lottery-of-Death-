@@ -33,4 +33,26 @@ function displayNames() {
         nameList.appendChild(li)
     }
 }
+function pickRandomName(){
+ const randomNameDiv = document.getElementById('randomName')
+ randomNameDiv.textContent = ''
+// select random fro name array
+ const randomNumber = Math.floor(Math.random()*namesArray.length)
+ const randomName = namesArray[randomNumber]
+
+ randomNameDiv.textContent = randomName
+ namesArray.splice(randomNumber, 1)
+
+ displayNames();
+}
+
+
+
+
+
 document.getElementById('addNameBtn').addEventListener('click', addName)
+
+
+
+
+document.getElementById('pickRandomBtn').addEventListener('click', pickRandomName)
